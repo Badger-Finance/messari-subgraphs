@@ -1,56 +1,56 @@
 {
   "network": "goerli",
   "eBTCDeployer": {
-    "address": "0xb363F423499d430614802A449eBb041761d7e6BD",
-    "verification": "https://goerli.etherscan.io/address/0xb363F423499d430614802A449eBb041761d7e6BD#code"
+    "address": "0x76B8F26b28da3C933a01F6a46fD63aCC01190cd6",
+    "verification": "https://goerli.etherscan.io/address/0x76B8F26b28da3C933a01F6a46fD63aCC01190cd6#code"
   },
   "collateral": {
-    "address": "0xbB3cD0a345573003d450959146D282b09d49378a",
-    "verification": "https://goerli.etherscan.io/address/0xbB3cD0a345573003d450959146D282b09d49378a#code"
+    "address": "0x6B842CEA279aB886119F66fdCf6F864B5305008f",
+    "verification": "https://goerli.etherscan.io/address/0x6B842CEA279aB886119F66fdCf6F864B5305008f#code"
   },
   "authority": {
-    "address": "0x641Bd22Cf276B44F2063CF1ABD08d149552CE89A",
-    "verification": "https://goerli.etherscan.io/address/0x641Bd22Cf276B44F2063CF1ABD08d149552CE89A#code"
+    "address": "0xc9A417f2Ab00A4E454428E55DD4CC29C0a087619",
+    "verification": "https://goerli.etherscan.io/address/0xc9A417f2Ab00A4E454428E55DD4CC29C0a087619#code"
   },
   "liquidationLibrary": {
-    "address": "0x4563Be621BD2Ab264a5d275827BAc694dA226c77",
-    "verification": "https://goerli.etherscan.io/address/0x4563Be621BD2Ab264a5d275827BAc694dA226c77#code"
+    "address": "0x0d6d61aC6f4caa5fE6aBBBd3Ca862668FC26a5C2",
+    "verification": "https://goerli.etherscan.io/address/0x0d6d61aC6f4caa5fE6aBBBd3Ca862668FC26a5C2#code"
   },
   "cdpManager": {
-    "address": "0x11676296549bccF5cA978f8c2b0de913AbE7d01f",
-    "verification": "https://goerli.etherscan.io/address/0x11676296549bccF5cA978f8c2b0de913AbE7d01f#code"
+    "address": "0x7Cbde961F8aDB94c8A7660Abe1f3e647dbB8513f",
+    "verification": "https://goerli.etherscan.io/address/0x7Cbde961F8aDB94c8A7660Abe1f3e647dbB8513f#code"
   },
   "borrowerOperations": {
-    "address": "0x3b4b99e75a6AeA3111f09b13359951069b0CFF8B",
-    "verification": "https://goerli.etherscan.io/address/0x3b4b99e75a6AeA3111f09b13359951069b0CFF8B#code"
+    "address": "0x11d823a74104A4E9D2E49672BAa6Ab9B5d321D06",
+    "verification": "https://goerli.etherscan.io/address/0x11d823a74104A4E9D2E49672BAa6Ab9B5d321D06#code"
   },
   "eBTCToken": {
-    "address": "0x2D50bF24590daE07D79C66aDcC31D9bA94376b31",
-    "verification": "https://goerli.etherscan.io/address/0x2D50bF24590daE07D79C66aDcC31D9bA94376b31#code"
+    "address": "0x5F9Da4b8B81AB38649Aa5d2043eD58C313Bf4139",
+    "verification": "https://goerli.etherscan.io/address/0x5F9Da4b8B81AB38649Aa5d2043eD58C313Bf4139#code"
   },
   "priceFeed": {
-    "address": "0xA80553090a2D40796b9E5DFC7c356a9bb1463Ed9",
-    "verification": "https://goerli.etherscan.io/address/0xA80553090a2D40796b9E5DFC7c356a9bb1463Ed9#code",
-    "startBlock": 9064622
+    "address": "0x3BC7F4D73bC4568cD69579c0A5c709E2FF082422",
+    "verification": "https://goerli.etherscan.io/address/0x3BC7F4D73bC4568cD69579c0A5c709E2FF082422#code",
+    "startBlock": 9129660
   },
   "activePool": {
-    "address": "0x04ae82bAbE55907Ce71bE5beB406635670315401",
-    "verification": "https://goerli.etherscan.io/address/0x04ae82bAbE55907Ce71bE5beB406635670315401#code"
+    "address": "0xB230cDa730CF515795Ad047fD8320D3e4480C8b8",
+    "verification": "https://goerli.etherscan.io/address/0xB230cDa730CF515795Ad047fD8320D3e4480C8b8#code"
   },
   "collSurplusPool": {
-    "address": "0xC1B5fE891Be874BB15e8F34B43843D7dFfC55123",
-    "verification": "https://goerli.etherscan.io/address/0xC1B5fE891Be874BB15e8F34B43843D7dFfC55123#code"
+    "address": "0xDB58AfEb24C44EAe3F0f211f71D1a88F92F0c5d9",
+    "verification": "https://goerli.etherscan.io/address/0xDB58AfEb24C44EAe3F0f211f71D1a88F92F0c5d9#code"
   },
   "sortedCdps": {
-    "address": "0x344A8e361EBDB34a5ce8F5F62945f3c53B383bDa",
-    "verification": "https://goerli.etherscan.io/address/0x344A8e361EBDB34a5ce8F5F62945f3c53B383bDa#code"
+    "address": "0xdf00C96Efec9784022553d550898003E8e65D622",
+    "verification": "https://goerli.etherscan.io/address/0xdf00C96Efec9784022553d550898003E8e65D622#code"
   },
   "hintHelpers": {
-    "address": "0x7D53d69A6098A54bd24c505d838D74D3E417d112",
-    "verification": "https://goerli.etherscan.io/address/0x7D53d69A6098A54bd24c505d838D74D3E417d112#code"
+    "address": "0xCf9d6402840008F24B428d4496c8Dc8433527C99",
+    "verification": "https://goerli.etherscan.io/address/0xCf9d6402840008F24B428d4496c8Dc8433527C99#code"
   },
   "feeRecipient": {
-    "address": "0x94737BC2f1c779B907d9579C3393e718D8033866",
-    "verification": "https://goerli.etherscan.io/address/0x94737BC2f1c779B907d9579C3393e718D8033866#code"
+    "address": "0x2D81Ad01FA2f94f009853241FdCa0A2715EC39d4",
+    "verification": "https://goerli.etherscan.io/address/0x2D81Ad01FA2f94f009853241FdCa0A2715EC39d4#code"
   }
 }
