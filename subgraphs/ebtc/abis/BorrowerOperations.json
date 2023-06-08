@@ -1,5 +1,51 @@
 [
   {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_cdpManagerAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_activePoolAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_collSurplusPoolAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_priceFeedAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_sortedCdpsAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_ebtcTokenAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_feeRecipientAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_collTokenAddress",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
     "anonymous": false,
     "inputs": [
       {
@@ -10,6 +56,124 @@
       }
     ],
     "name": "ActivePoolAddressChanged",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "contract Authority",
+        "name": "newAuthority",
+        "type": "address"
+      }
+    ],
+    "name": "AuthorityUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "_cdpId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "_borrower",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "_creator",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "arrayIndex",
+        "type": "uint256"
+      }
+    ],
+    "name": "CdpCreated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "_newCdpManagerAddress",
+        "type": "address"
+      }
+    ],
+    "name": "CdpManagerAddressChanged",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "_cdpId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "_borrower",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "_oldDebt",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "_oldColl",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "_debt",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "_coll",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "_stake",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "enum IBorrowerOperations.BorrowerOperation",
+        "name": "_operation",
+        "type": "uint8"
+      }
+    ],
+    "name": "CdpUpdated",
     "type": "event"
   },
   {
@@ -31,11 +195,11 @@
       {
         "indexed": false,
         "internalType": "address",
-        "name": "_defaultPoolAddress",
+        "name": "_collTokenAddress",
         "type": "address"
       }
     ],
-    "name": "DefaultPoolAddressChanged",
+    "name": "CollateralAddressChanged",
     "type": "event"
   },
   {
@@ -44,11 +208,11 @@
       {
         "indexed": false,
         "internalType": "address",
-        "name": "_gasPoolAddress",
+        "name": "_ebtcTokenAddress",
         "type": "address"
       }
     ],
-    "name": "GasPoolAddressChanged",
+    "name": "EBTCTokenAddressChanged",
     "type": "event"
   },
   {
@@ -57,30 +221,36 @@
       {
         "indexed": false,
         "internalType": "address",
-        "name": "_lqtyStakingAddress",
+        "name": "_feeRecipientAddress",
         "type": "address"
       }
     ],
-    "name": "LQTYStakingAddressChanged",
+    "name": "FeeRecipientAddressChanged",
     "type": "event"
   },
   {
     "anonymous": false,
     "inputs": [
       {
-        "indexed": true,
+        "indexed": false,
         "internalType": "address",
-        "name": "_borrower",
+        "name": "_setter",
         "type": "address"
       },
       {
         "indexed": false,
         "internalType": "uint256",
-        "name": "_LUSDFee",
+        "name": "_oldFee",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "_newFee",
         "type": "uint256"
       }
     ],
-    "name": "LUSDBorrowingFeePaid",
+    "name": "FlashFeeSet",
     "type": "event"
   },
   {
@@ -89,30 +259,23 @@
       {
         "indexed": false,
         "internalType": "address",
-        "name": "_lusdTokenAddress",
-        "type": "address"
-      }
-    ],
-    "name": "LUSDTokenAddressChanged",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "previousOwner",
+        "name": "_setter",
         "type": "address"
       },
       {
-        "indexed": true,
-        "internalType": "address",
-        "name": "newOwner",
-        "type": "address"
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "_oldMaxFee",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "_newMaxFee",
+        "type": "uint256"
       }
     ],
-    "name": "OwnershipTransferred",
+    "name": "MaxFlashFeeSet",
     "type": "event"
   },
   {
@@ -134,93 +297,11 @@
       {
         "indexed": false,
         "internalType": "address",
-        "name": "_sortedTrovesAddress",
+        "name": "_sortedCdpsAddress",
         "type": "address"
       }
     ],
-    "name": "SortedTrovesAddressChanged",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "internalType": "address",
-        "name": "_stabilityPoolAddress",
-        "type": "address"
-      }
-    ],
-    "name": "StabilityPoolAddressChanged",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "_borrower",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "arrayIndex",
-        "type": "uint256"
-      }
-    ],
-    "name": "TroveCreated",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "internalType": "address",
-        "name": "_newTroveManagerAddress",
-        "type": "address"
-      }
-    ],
-    "name": "TroveManagerAddressChanged",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "_borrower",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "_debt",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "_coll",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "stake",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "enum BorrowerOperations.BorrowerOperation",
-        "name": "operation",
-        "type": "uint8"
-      }
-    ],
-    "name": "TroveUpdated",
+    "name": "SortedCdpsAddressChanged",
     "type": "event"
   },
   {
@@ -264,7 +345,59 @@
   },
   {
     "inputs": [],
-    "name": "LUSD_GAS_COMPENSATION",
+    "name": "FLASH_SUCCESS_VALUE",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "LICR",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "LIQUIDATOR_REWARD",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "MAX_BPS",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "MAX_REWARD_SPLIT",
     "outputs": [
       {
         "internalType": "uint256",
@@ -290,7 +423,7 @@
   },
   {
     "inputs": [],
-    "name": "MIN_NET_DEBT",
+    "name": "MIN_NET_COLL",
     "outputs": [
       {
         "internalType": "uint256",
@@ -329,7 +462,46 @@
   },
   {
     "inputs": [],
+    "name": "STAKING_REWARD_SPLIT",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
     "name": "_100pct",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "_105pct",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "_5pct",
     "outputs": [
       {
         "internalType": "uint256",
@@ -356,27 +528,37 @@
   {
     "inputs": [
       {
-        "internalType": "address",
-        "name": "_upperHint",
-        "type": "address"
+        "internalType": "bytes32",
+        "name": "_cdpId",
+        "type": "bytes32"
       },
       {
-        "internalType": "address",
+        "internalType": "bytes32",
+        "name": "_upperHint",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "bytes32",
         "name": "_lowerHint",
-        "type": "address"
+        "type": "bytes32"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_collAmount",
+        "type": "uint256"
       }
     ],
     "name": "addColl",
     "outputs": [],
-    "stateMutability": "payable",
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
     "inputs": [
       {
-        "internalType": "uint256",
-        "name": "_maxFeePercentage",
-        "type": "uint256"
+        "internalType": "bytes32",
+        "name": "_cdpId",
+        "type": "bytes32"
       },
       {
         "internalType": "uint256",
@@ -385,7 +567,7 @@
       },
       {
         "internalType": "uint256",
-        "name": "_LUSDChange",
+        "name": "_EBTCChange",
         "type": "uint256"
       },
       {
@@ -394,19 +576,101 @@
         "type": "bool"
       },
       {
-        "internalType": "address",
+        "internalType": "bytes32",
         "name": "_upperHint",
-        "type": "address"
+        "type": "bytes32"
       },
       {
-        "internalType": "address",
+        "internalType": "bytes32",
         "name": "_lowerHint",
+        "type": "bytes32"
+      }
+    ],
+    "name": "adjustCdp",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_cdpId",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_collWithdrawal",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_EBTCChange",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "_isDebtIncrease",
+        "type": "bool"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "_upperHint",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "_lowerHint",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_collAddAmount",
+        "type": "uint256"
+      }
+    ],
+    "name": "adjustCdpWithColl",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "authority",
+    "outputs": [
+      {
+        "internalType": "contract Authority",
+        "name": "",
         "type": "address"
       }
     ],
-    "name": "adjustTrove",
-    "outputs": [],
-    "stateMutability": "payable",
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "authorityInitialized",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "cdpManager",
+    "outputs": [
+      {
+        "internalType": "contract ICdpManager",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -417,18 +681,76 @@
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "closeTrove",
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_cdpId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "closeCdp",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
   },
   {
     "inputs": [],
-    "name": "defaultPool",
+    "name": "collSurplusPool",
     "outputs": [
       {
-        "internalType": "contract IDefaultPool",
+        "internalType": "contract ICollSurplusPool",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "collateral",
+    "outputs": [
+      {
+        "internalType": "contract ICollateralToken",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "ebtcToken",
+    "outputs": [
+      {
+        "internalType": "contract IEBTCToken",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "feeBps",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "feeRecipientAddress",
+    "outputs": [
+      {
+        "internalType": "address",
         "name": "",
         "type": "address"
       }
@@ -439,12 +761,17 @@
   {
     "inputs": [
       {
+        "internalType": "address",
+        "name": "token",
+        "type": "address"
+      },
+      {
         "internalType": "uint256",
-        "name": "_debt",
+        "name": "amount",
         "type": "uint256"
       }
     ],
-    "name": "getCompositeDebt",
+    "name": "flashFee",
     "outputs": [
       {
         "internalType": "uint256",
@@ -452,7 +779,41 @@
         "type": "uint256"
       }
     ],
-    "stateMutability": "pure",
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "contract IERC3156FlashBorrower",
+        "name": "receiver",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "token",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bytes",
+        "name": "data",
+        "type": "bytes"
+      }
+    ],
+    "name": "flashLoan",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -470,11 +831,11 @@
   },
   {
     "inputs": [],
-    "name": "getEntireSystemDebt",
+    "name": "locked",
     "outputs": [
       {
         "internalType": "uint256",
-        "name": "entireSystemDebt",
+        "name": "",
         "type": "uint256"
       }
     ],
@@ -483,51 +844,12 @@
   },
   {
     "inputs": [],
-    "name": "isOwner",
+    "name": "maxFeeBps",
     "outputs": [
       {
-        "internalType": "bool",
+        "internalType": "uint256",
         "name": "",
-        "type": "bool"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "lqtyStaking",
-    "outputs": [
-      {
-        "internalType": "contract ILQTYStaking",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "lqtyStakingAddress",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "lusdToken",
-    "outputs": [
-      {
-        "internalType": "contract ILUSDToken",
-        "name": "",
-        "type": "address"
+        "type": "uint256"
       }
     ],
     "stateMutability": "view",
@@ -537,64 +859,53 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "_borrower",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "_upperHint",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "_lowerHint",
+        "name": "token",
         "type": "address"
       }
     ],
-    "name": "moveETHGainToTrove",
-    "outputs": [],
-    "stateMutability": "payable",
+    "name": "maxFlashLoan",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "_maxFeePercentage",
+        "name": "_EBTCAmount",
         "type": "uint256"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "_upperHint",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "_lowerHint",
+        "type": "bytes32"
       },
       {
         "internalType": "uint256",
-        "name": "_LUSDAmount",
+        "name": "_collAmount",
         "type": "uint256"
-      },
-      {
-        "internalType": "address",
-        "name": "_upperHint",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "_lowerHint",
-        "type": "address"
       }
     ],
-    "name": "openTrove",
-    "outputs": [],
-    "stateMutability": "payable",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "owner",
+    "name": "openCdp",
     "outputs": [
       {
-        "internalType": "address",
+        "internalType": "bytes32",
         "name": "",
-        "type": "address"
+        "type": "bytes32"
       }
     ],
-    "stateMutability": "view",
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -613,22 +924,27 @@
   {
     "inputs": [
       {
+        "internalType": "bytes32",
+        "name": "_cdpId",
+        "type": "bytes32"
+      },
+      {
         "internalType": "uint256",
-        "name": "_LUSDAmount",
+        "name": "_EBTCAmount",
         "type": "uint256"
       },
       {
-        "internalType": "address",
+        "internalType": "bytes32",
         "name": "_upperHint",
-        "type": "address"
+        "type": "bytes32"
       },
       {
-        "internalType": "address",
+        "internalType": "bytes32",
         "name": "_lowerHint",
-        "type": "address"
+        "type": "bytes32"
       }
     ],
-    "name": "repayLUSD",
+    "name": "repayEBTC",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -637,79 +953,60 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "_troveManagerAddress",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "_activePoolAddress",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "_defaultPoolAddress",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "_stabilityPoolAddress",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "_gasPoolAddress",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "_collSurplusPoolAddress",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "_priceFeedAddress",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "_sortedTrovesAddress",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "_lusdTokenAddress",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "_lqtyStakingAddress",
+        "name": "newAuthority",
         "type": "address"
       }
     ],
-    "name": "setAddresses",
+    "name": "setAuthority",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_newFee",
+        "type": "uint256"
+      }
+    ],
+    "name": "setFeeBps",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_feeRecipientAddress",
+        "type": "address"
+      }
+    ],
+    "name": "setFeeRecipientAddress",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_newMaxFlashFee",
+        "type": "uint256"
+      }
+    ],
+    "name": "setMaxFeeBps",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
   },
   {
     "inputs": [],
-    "name": "sortedTroves",
+    "name": "sortedCdps",
     "outputs": [
       {
-        "internalType": "contract ISortedTroves",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "troveManager",
-    "outputs": [
-      {
-        "internalType": "contract ITroveManager",
+        "internalType": "contract ISortedCdps",
         "name": "",
         "type": "address"
       }
@@ -719,20 +1016,25 @@
   },
   {
     "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_cdpId",
+        "type": "bytes32"
+      },
       {
         "internalType": "uint256",
         "name": "_collWithdrawal",
         "type": "uint256"
       },
       {
-        "internalType": "address",
+        "internalType": "bytes32",
         "name": "_upperHint",
-        "type": "address"
+        "type": "bytes32"
       },
       {
-        "internalType": "address",
+        "internalType": "bytes32",
         "name": "_lowerHint",
-        "type": "address"
+        "type": "bytes32"
       }
     ],
     "name": "withdrawColl",
@@ -743,27 +1045,27 @@
   {
     "inputs": [
       {
-        "internalType": "uint256",
-        "name": "_maxFeePercentage",
-        "type": "uint256"
+        "internalType": "bytes32",
+        "name": "_cdpId",
+        "type": "bytes32"
       },
       {
         "internalType": "uint256",
-        "name": "_LUSDAmount",
+        "name": "_EBTCAmount",
         "type": "uint256"
       },
       {
-        "internalType": "address",
+        "internalType": "bytes32",
         "name": "_upperHint",
-        "type": "address"
+        "type": "bytes32"
       },
       {
-        "internalType": "address",
+        "internalType": "bytes32",
         "name": "_lowerHint",
-        "type": "address"
+        "type": "bytes32"
       }
     ],
-    "name": "withdrawLUSD",
+    "name": "withdrawEBTC",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
