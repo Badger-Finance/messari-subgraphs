@@ -8863,7 +8863,7 @@
     "protocol": "ebtc",
     "project": "ebtc",
     "deployments": {
-      "ebtc-ethereum": {
+      "ebtc-goerli": {
         "network": "ethereum",
         "status": "dev",
         "versions": {
