@@ -1,12 +1,11 @@
 import { BigDecimal, BigInt } from "@graphprotocol/graph-ts";
-import { bigIntToBigDecimal } from "./numbers";
 
 ////////////////////
 ///// Versions /////
 ////////////////////
 
-export const PROTOCOL_NAME = "Liquity";
-export const PROTOCOL_SLUG = "liquity";
+export const PROTOCOL_NAME = "eBTC";
+export const PROTOCOL_SLUG = "ebtc";
 
 ////////////////////////
 ///// Schema Enums /////
@@ -102,13 +101,7 @@ export namespace PositionSide {
 
 export const ZERO_ADDRESS = "0x0000000000000000000000000000000000000000";
 export const ETH_ADDRESS = "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee";
-
-export const UNISWAP_V2_FACTORY = "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f";
-
 export const WETH_ADDRESS = "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2";
-export const USDC_WETH_PAIR = "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc"; // created 10008355
-export const DAI_WETH_PAIR = "0xa478c2975ab1ea89e8196811f51a7b7ade33eb11"; // created block 10042267
-export const USDT_WETH_PAIR = "0x0d4a11d5eeaac28ec3f61d100daf4d40471f1852"; // created block 10093341
 
 ////////////////////////
 ///// Type Helpers /////
@@ -117,7 +110,6 @@ export const USDT_WETH_PAIR = "0x0d4a11d5eeaac28ec3f61d100daf4d40471f1852"; // c
 export const DEFAULT_DECIMALS = 18;
 
 export const USDC_DECIMALS = 6;
-export const USDC_DENOMINATOR = BigDecimal.fromString("1000000");
 
 export const BIGINT_ZERO = BigInt.fromI32(0);
 export const BIGINT_ONE = BigInt.fromI32(1);
@@ -165,19 +157,15 @@ export const ETH_NAME = "Ether";
 ///// Protocol Specific /////
 /////////////////////////////
 
-export const TROVE_MANAGER = "0xa39739ef8b0231dbfa0dcda07d7e29faabcf4bb2";
+export const CDP_MANAGER = "0x11676296549bccF5cA978f8c2b0de913AbE7d01f";
 
-export const ACTIVE_POOL_CREATED_TIMESTAMP = BigInt.fromI32(1617600130);
+export const ACTIVE_POOL_CREATED_TIMESTAMP = BigInt.fromI32(1685079936);
 
-export const ACTIVE_POOL_CREATED_BLOCK = BigInt.fromI32(12178562);
+export const ACTIVE_POOL_CREATED_BLOCK = BigInt.fromI32(9064630);
 
-export const ACTIVE_POOL = "0xDf9Eb223bAFBE5c5271415C75aeCD68C21fE3D7F";
+export const ACTIVE_POOL = "0x04ae82bAbE55907Ce71bE5beB406635670315401";
 
-export const STABILITY_POOL = "0x66017D22b0f8556afDd19FC67041899Eb65a21bb";
-
-export const LUSD_ADDRESS = "0x5f98805a4e8be255a32880fdec7f6728c6568ba0";
-
-export const LQTY_ADDRESS = "0x6dea81c8171d0ba574754ef6f8b412f2ed88c54d";
+export const EBTC_ADDRESS = "0x2D50bF24590daE07D79C66aDcC31D9bA94376b31";
 
 export const MINIMUM_COLLATERAL_RATIO = BigDecimal.fromString("1.1");
 
@@ -189,19 +177,3 @@ export const LIQUIDATION_FEE_PERCENT = BigDecimal.fromString("0.5");
 export const LIQUIDATION_FEE = LIQUIDATION_FEE_PERCENT.div(BIGDECIMAL_HUNDRED);
 
 export const LIQUIDATION_RESERVE_LUSD = BigDecimal.fromString("200");
-
-// Rewards Calculation Constants
-
-// Issuance factor.
-// https://github.com/liquity/dev/blob/main/packages/contracts/contracts/LQTY/CommunityIssuance.sol#L37
-export const STABILITY_POOL_LQTY_ISSUANCE_FACTOR = bigIntToBigDecimal(
-  BigInt.fromString("999998681227695000")
-);
-
-// 32 Million
-// https://github.com/liquity/dev/blob/main/packages/contracts/contracts/LQTY/CommunityIssuance.sol#L45
-export const STABILITY_POOL_LQTY_BUGDET = BigDecimal.fromString("32000000");
-
-// Timestamp when CommunityIssuance contract was deployed.
-// https://etherscan.io/tx/0xb77963d3d9280625c886b82f593cc742998cdfa69be7fe9946dea429dcebd8bf
-export const STABILITY_POOL_REWARD_START = BigInt.fromI32(1617611537);
