@@ -112,7 +112,7 @@ export const ETH_ADDRESS = Bytes.fromHexString(
   "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
 );
 export const WETH_ADDRESS = Bytes.fromHexString(
-  "0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6"
+  "{{ weth_address }}"
 );
 
 ////////////////////////
@@ -175,14 +175,14 @@ export const ETH_NAME = "Ether";
 /////////////////////////////
 
 export const EBTC_ADDRESS = Bytes.fromHexString(
-  "0x5F9Da4b8B81AB38649Aa5d2043eD58C313Bf4139"
+  "{{ eBTCToken.address }}"
 );
 
 export const ACTIVE_POOL = Bytes.fromHexString(
-  "0xB230cDa730CF515795Ad047fD8320D3e4480C8b8"
+  "{{ activePool.address }}"
 );
-export const ACTIVE_POOL_CREATED_BLOCK = BigInt.fromI32(9129672);
-export const ACTIVE_POOL_CREATED_TIMESTAMP = BigInt.fromI32(1686026808);
+export const ACTIVE_POOL_CREATED_BLOCK = BigInt.fromI32({{ activePool.startBlock }});
+export const ACTIVE_POOL_CREATED_TIMESTAMP = BigInt.fromI32({{ activePool.createdAt }});
 
 export const MINIMUM_COLLATERAL_RATIO = BigDecimal.fromString("1.1");
 export const MAXIMUM_LTV = BIGDECIMAL_ONE.div(MINIMUM_COLLATERAL_RATIO).times(
