@@ -1,4 +1,4 @@
-import { CdpUpdated } from "../../generated/CdpManager/CdpManager";
+import { CdpUpdated } from "../../generated/BorrowerOperations/BorrowerOperations";
 import { getOrCreateCdp } from "../entities/cdp";
 
 /**

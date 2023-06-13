@@ -71,38 +71,26 @@ dataSources:
       abis:
         - name: CdpManager
           file: ./abis/CdpManager.json
-        ###########################################
-        ############## Price Oracle ###############
-        ###########################################
-        # ERC20
-        - name: _ERC20
-          file: ./abis/Prices/ERC20.json
-        # Curve Contracts
-        - name: CurvePool
-          file: ./abis/Prices/Curve/Pool.json
-        - name: CurveRegistry
-          file: ./abis/Prices/Curve/Registry.json
-        - name: CalculationsCurve
-          file: ./abis/Prices/Calculations/Curve.json
-        # YearnLens Contracts
-        - name: YearnLensContract
-          file: ./abis/Prices/YearnLens.json
-        # Aave Oracle Contract
-        - name: AaveOracleContract
-          file: ./abis/Prices/AaveOracle.json
-        # # SushiSwap Contracts
-        - name: CalculationsSushiSwap
-          file: ./abis/Prices/Calculations/SushiSwap.json
-        # ChainLink Contracts
-        - name: ChainLinkContract
-          file: ./abis/Prices/ChainLink.json
-        # Uniswap Contracts
-        - name: UniswapRouter
-          file: ./abis/Prices/Uniswap/Router.json
-        - name: UniswapPair
-          file: ./abis/Prices/Uniswap/Pair.json
-        ###########################################
       eventHandlers:
         - event: CdpUpdated(indexed bytes32,indexed address,uint256,uint256,uint256,uint256,uint256,uint8)
           handler: handleCdpUpdated
-
+  - name: BorrowerOperations
+    kind: ethereum/contract
+    network: {{ network }}
+    source:
+      abi: BorrowerOperations
+      address: "{{ borrowerOperations.address }}"
+      startBlock: {{ borrowerOperations.startBlock }}
+    mapping:
+      file: ./src/mapping/BorrowerOperations.ts
+      language: wasm/assemblyscript
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      entities:
+        - Cdp
+      abis:
+        - name: BorrowerOperations
+          file: ./abis/BorrowerOperations.json
+      eventHandlers:
+        - event: CdpUpdated(indexed bytes32,indexed address,uint256,uint256,uint256,uint256,uint256,uint8)
+          handler: handleCdpUpdated

@@ -2012,8 +2012,10 @@ type Flashloan implements Event @entity(immutable: true) @transaction {
 
 ## Ebtc Specific Events
 type Cdp @entity {
-  " Cdp owner's address "
+  " Cdp Id"
   id: Bytes!
+  " Cdp owner's address "
+  owner: Account!
   " Amount of stETH owner has deposited "
   collateral: BigInt!
   " Amount of eBTC owner has withdrawn "
