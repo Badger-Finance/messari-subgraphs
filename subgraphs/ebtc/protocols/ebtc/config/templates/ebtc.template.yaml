@@ -3,6 +3,27 @@ repository: https://github.com/messari/subgraphs
 schema:
   file: ./schema.graphql
 dataSources:
+  - name: ActivePool
+    kind: ethereum/contract
+    network: {{ network }}
+    source:
+      abi: ActivePool
+      address: "{{ activePool.address }}"
+      startBlock: {{ activePool.startBlock }}
+    mapping:
+      file: ./src/mapping/ActivePool.ts
+      language: wasm/assemblyscript
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      entities: []
+      abis:
+        - name: ActivePool
+          file: ./abis/ActivePool.json
+      eventHandlers:
+        - event: ActivePoolCollBalanceUpdated(uint256)
+          handler: handleActivePoolCollBalanceUpdated
+        - event: ActivePoolEBTCDebtUpdated(uint256)
+          handler: handleActivePoolEBTCDebtUpdated
   - name: PriceFeed
     kind: ethereum/contract
     network: {{ network }}

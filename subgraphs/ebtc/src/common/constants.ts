@@ -178,6 +178,10 @@ export const EBTC_ADDRESS = Bytes.fromHexString(
   "0x5F9Da4b8B81AB38649Aa5d2043eD58C313Bf4139"
 );
 
+export const CDP_MANAGER = Bytes.fromHexString(
+  "0x7Cbde961F8aDB94c8A7660Abe1f3e647dbB8513f"
+);
+
 export const ACTIVE_POOL = Bytes.fromHexString(
   "0xB230cDa730CF515795Ad047fD8320D3e4480C8b8"
 );
