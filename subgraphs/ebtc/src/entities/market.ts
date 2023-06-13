@@ -13,7 +13,7 @@ import {
   SECONDS_PER_HOUR,
 } from "../common/constants";
 import {
-  getOrCreateLiquityProtocol,
+  getOrCreateEbtcProtocol,
   updateProtocolBorrowBalance,
   updateProtocolUSDLocked,
 } from "./protocol";
@@ -28,7 +28,7 @@ export function getOrCreateMarket(): Market {
   let market = Market.load(ACTIVE_POOL);
   if (!market) {
     market = new Market(ACTIVE_POOL);
-    market.protocol = getOrCreateLiquityProtocol().id;
+    market.protocol = getOrCreateEbtcProtocol().id;
     market.name = "eBTC";
     market.isActive = true;
     market.canUseAsCollateral = true;

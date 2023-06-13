@@ -19,7 +19,7 @@ import {
 import { Versions } from "../versions";
 import { getEBTCToken } from "./token";
 
-export function getOrCreateLiquityProtocol(): LendingProtocol {
+export function getOrCreateEbtcProtocol(): LendingProtocol {
   let protocol = LendingProtocol.load(CDP_MANAGER);
   if (!protocol) {
     protocol = new LendingProtocol(CDP_MANAGER);
@@ -102,7 +102,7 @@ export function updateProtocolUSDLocked(
   event: ethereum.Event,
   netChangeUSD: BigDecimal
 ): void {
-  const protocol = getOrCreateLiquityProtocol();
+  const protocol = getOrCreateEbtcProtocol();
   const totalValueLocked = protocol.totalValueLockedUSD.plus(netChangeUSD);
   protocol.totalValueLockedUSD = totalValueLocked;
   protocol.totalDepositBalanceUSD = totalValueLocked;
@@ -116,7 +116,7 @@ export function updateProtocolBorrowBalance(
   borrowedUSD: BigDecimal,
   totalEBTCSupply: BigInt
 ): void {
-  const protocol = getOrCreateLiquityProtocol();
+  const protocol = getOrCreateEbtcProtocol();
   protocol.totalBorrowBalanceUSD = borrowedUSD;
   protocol.mintedTokenSupplies = [totalEBTCSupply];
   protocol.save();
