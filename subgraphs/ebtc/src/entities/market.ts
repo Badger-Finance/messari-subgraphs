@@ -98,25 +98,11 @@ export function getOrCreateMarket(): Market {
     market.cumulativeUniqueFlashloaners = INT_ZERO;
 
     // ##### Account/Position Data #####
-    // market.positions: [Position!]! @derivedFrom(field: "market") // " All positions in this market "
     market.positionCount = INT_ZERO;
     market.openPositionCount = INT_ZERO;
     market.closedPositionCount = INT_ZERO;
     market.lendingPositionCount = INT_ZERO;
     market.borrowingPositionCount = INT_ZERO;
-
-    // ##### Snapshots #####
-    // market.dailySnapshots: [MarketDailySnapshot!]! @derivedFrom(field: "market") // " Market daily snapshots "
-    // market.hourlySnapshots: [MarketHourlySnapshot!]! @derivedFrom(field: "market") // " Market hourly snapshots "
-
-    // ##### Events #####
-    // market.deposits: [Deposit!]! @derivedFrom(field: "market") // " All deposits made to this market "
-    // market.withdraws: [Withdraw!]! @derivedFrom(field: "market") // " All withdrawals made from this market "
-    // market.borrows: [Borrow!]! @derivedFrom(field: "market") // " All borrows from this market "
-    // market.repays: [Repay!]! @derivedFrom(field: "market") // " All repayments to this market "
-    // market.liquidates: [Liquidate!]! @derivedFrom(field: "market") // " All liquidations made to this market "
-    // market.transfers: [Transfer!]! @derivedFrom(field: "market") // " All transfers made in this market "
-    // market.flashloans: [Flashloan!]! @derivedFrom(field: "market") // " All flashloans made in this market"
 
     market.save();
   }
