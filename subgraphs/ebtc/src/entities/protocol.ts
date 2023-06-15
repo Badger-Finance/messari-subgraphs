@@ -5,10 +5,13 @@ import {
 } from "../../generated/schema";
 import {
   BIGDECIMAL_ZERO,
+  BIGINT_ZERO,
   INT_ONE,
   INT_ZERO,
+  CollateralizationType,
   LendingType,
   Network,
+  PermissionType,
   ProtocolType,
   PROTOCOL_NAME,
   PROTOCOL_SLUG,
@@ -23,31 +26,55 @@ export function getOrCreateEbtcProtocol(): LendingProtocol {
   let protocol = LendingProtocol.load(CDP_MANAGER);
   if (!protocol) {
     protocol = new LendingProtocol(CDP_MANAGER);
+    protocol.id = CDP_MANAGER;
+    protocol.protocol = "Liquity";
     protocol.name = PROTOCOL_NAME;
     protocol.slug = PROTOCOL_SLUG;
-    protocol.network = Network.MAINNET;
+    protocol.network = Network.MAINNET; // there is no Network.GOERLI
     protocol.type = ProtocolType.LENDING;
     protocol.lendingType = LendingType.CDP;
+    protocol.lenderPermissionType = PermissionType.PERMISSIONLESS;
+    protocol.borrowerPermissionType = PermissionType.PERMISSIONLESS;
+    protocol.poolCreatorPermissionType = PermissionType.ADMIN;
     protocol.riskType = RiskType.ISOLATED;
+    protocol.collateralizationType = CollateralizationType.OVER_COLLATERALIZED;
     protocol.mintedTokens = [getEBTCToken().id];
-    protocol.totalPoolCount = INT_ONE; // Only one active pool
-
+    // protocol.rewardTokens: [RewardToken!] // " Additional tokens that are given as reward for position in a protocol, usually in liquidity mining programs. "
     protocol.cumulativeUniqueUsers = INT_ZERO;
     protocol.cumulativeUniqueDepositors = INT_ZERO;
     protocol.cumulativeUniqueBorrowers = INT_ZERO;
     protocol.cumulativeUniqueLiquidators = INT_ZERO;
     protocol.cumulativeUniqueLiquidatees = INT_ZERO;
     protocol.totalValueLockedUSD = BIGDECIMAL_ZERO;
+    protocol.protocolControlledValueUSD = BIGDECIMAL_ZERO;
     protocol.cumulativeSupplySideRevenueUSD = BIGDECIMAL_ZERO;
     protocol.cumulativeProtocolSideRevenueUSD = BIGDECIMAL_ZERO;
     protocol.cumulativeTotalRevenueUSD = BIGDECIMAL_ZERO;
+    // protocol.fees: [Fee!] // " All fees in the protocol. Fee should be in percentage format. e.g. 0.30% liquidation fee "
+    // protocol.revenueDetail: RevenueDetail // " Details of revenue sources and amounts "
     protocol.totalDepositBalanceUSD = BIGDECIMAL_ZERO;
     protocol.cumulativeDepositUSD = BIGDECIMAL_ZERO;
     protocol.totalBorrowBalanceUSD = BIGDECIMAL_ZERO;
     protocol.cumulativeBorrowUSD = BIGDECIMAL_ZERO;
     protocol.cumulativeLiquidateUSD = BIGDECIMAL_ZERO;
+    protocol.mintedTokenSupplies = [BIGINT_ZERO];
+    protocol.totalPoolCount = INT_ONE;
     protocol.openPositionCount = INT_ZERO;
     protocol.cumulativePositionCount = INT_ZERO;
+    protocol.transactionCount = INT_ZERO;
+    protocol.depositCount = INT_ZERO;
+    protocol.withdrawCount = INT_ZERO;
+    protocol.borrowCount = INT_ZERO;
+    protocol.repayCount = INT_ZERO;
+    protocol.liquidationCount = INT_ZERO;
+    protocol.transferCount = INT_ZERO;
+    protocol.flashloanCount = INT_ZERO;
+    // protocol.rewardTokenEmissionsAmount: [BigInt!] // " Per-block reward token emission as of the current block normalized to a day, in token's native amount. This should be ideally calculated as the theoretical rate instead of the realized amount. "
+    // protocol.rewardTokenEmissionsUSD: [BigDecimal!] // " Per-block reward token emission as of the current block normalized to a day, in USD value. This should be ideally calculated as the theoretical rate instead of the realized amount. "
+    // protocol.dailyUsageMetrics: [UsageMetricsDailySnapshot!]! @derivedFrom(field: "protocol") // " Daily usage metrics for this protocol "
+    // protocol.hourlyUsageMetrics: [UsageMetricsHourlySnapshot!]! @derivedFrom(field: "protocol") // " Hourly usage metrics for this protocol "
+    // protocol.financialMetrics: [FinancialsDailySnapshot!]! @derivedFrom(field: "protocol") // " Daily financial metrics for this protocol "
+    // protocol.markets: [Market!]! @derivedFrom(field: "protocol") // " All markets that belong to this protocol "
   }
 
   protocol.schemaVersion = Versions.getSchemaVersion();

@@ -74,6 +74,19 @@ export namespace LendingType {
   export const POOLED = "POOLED";
 }
 
+export namespace PermissionType {
+  export const WHITELIST_ONLY = "WHITELIST_ONLY";
+  export const PERMISSIONED = "PERMISSIONED";
+  export const PERMISSIONLESS = "PERMISSIONLESS";
+  export const ADMIN = "ADMIN";
+}
+
+export namespace CollateralizationType {
+  export const OVER_COLLATERALIZED = "OVER_COLLATERALIZED";
+  export const UNDER_COLLATERALIZED = "UNDER_COLLATERALIZED";
+  export const UNCOLLATERALIZED = "UNCOLLATERALIZED";
+}
+
 export namespace RiskType {
   export const GLOBAL = "GLOBAL";
   export const ISOLATED = "ISOLATED";
