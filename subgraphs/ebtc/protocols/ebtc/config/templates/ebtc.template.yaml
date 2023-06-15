@@ -16,7 +16,7 @@ dataSources:
       kind: ethereum/events
       apiVersion: 0.0.7
       entities:
-        - Token
+        - Cdp
       abis:
         - name: PriceFeed
           file: ./abis/PriceFeed.json
@@ -54,3 +54,43 @@ dataSources:
       eventHandlers:
         - event: LastGoodPriceUpdated(uint256)
           handler: handleLastGoodPriceUpdated
+  - name: CdpManager
+    kind: ethereum/contract
+    network: {{ network }}
+    source:
+      abi: CdpManager
+      address: "{{ cdpManager.address }}"
+      startBlock: {{ cdpManager.startBlock }}
+    mapping:
+      file: ./src/mapping/CdpManager.ts
+      language: wasm/assemblyscript
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      entities:
+        - Cdp
+      abis:
+        - name: CdpManager
+          file: ./abis/CdpManager.json
+      eventHandlers:
+        - event: CdpUpdated(indexed bytes32,indexed address,uint256,uint256,uint256,uint256,uint256,uint8)
+          handler: handleCdpUpdated
+  - name: BorrowerOperations
+    kind: ethereum/contract
+    network: {{ network }}
+    source:
+      abi: BorrowerOperations
+      address: "{{ borrowerOperations.address }}"
+      startBlock: {{ borrowerOperations.startBlock }}
+    mapping:
+      file: ./src/mapping/BorrowerOperations.ts
+      language: wasm/assemblyscript
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      entities:
+        - Cdp
+      abis:
+        - name: BorrowerOperations
+          file: ./abis/BorrowerOperations.json
+      eventHandlers:
+        - event: CdpUpdated(indexed bytes32,indexed address,uint256,uint256,uint256,uint256,uint256,uint8)
+          handler: handleCdpUpdated
