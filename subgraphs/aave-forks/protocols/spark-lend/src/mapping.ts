@@ -40,6 +40,7 @@ import {
   SwapBorrowRateMode,
   Withdraw,
   UserEModeSet,
+  MintedToTreasury,
 } from "../../../generated/LendingPool/LendingPool";
 import { Market, _DefaultOracle } from "../../../generated/schema";
 import {
@@ -60,6 +61,7 @@ import {
   _handleFlashloanPremiumTotalUpdated,
   _handleLiquidate,
   _handleLiquidationProtocolFeeChanged,
+  _handleMintedToTreasury,
   _handlePriceOracleUpdated,
   _handleRepay,
   _handleReserveActivated,
@@ -270,6 +272,7 @@ export function handleReserveDataUpdated(event: ReserveDataUpdated): void {
     event,
     event.params.liquidityRate,
     event.params.liquidityIndex,
+    event.params.variableBorrowIndex,
     event.params.variableBorrowRate,
     event.params.stableBorrowRate,
     protocolData,
@@ -407,6 +410,15 @@ export function handleFlashloan(event: FlashLoan): void {
     event,
     event.params.premium,
     flashloanPremium
+  );
+}
+
+export function handleMintedToTreasury(event: MintedToTreasury): void {
+  _handleMintedToTreasury(
+    event,
+    protocolData,
+    event.params.reserve,
+    event.params.amountMinted
   );
 }
 

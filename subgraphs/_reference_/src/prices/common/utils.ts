@@ -5,6 +5,7 @@ import * as XDAI from "../config/gnosis";
 import * as CRONOS from "../config/cronos";
 import * as AURORA from "../config/aurora";
 import * as FANTOM from "../config/fantom";
+import * as GOERLI from "../config/goerli";
 import * as POLYGON from "../config/polygon";
 import * as MAINNET from "../config/mainnet";
 import * as HARMONY from "../config/harmony";
@@ -96,6 +97,8 @@ export function getConfig(): Configurations {
     return new CELO.config();
   } else if (network == FUSE.NETWORK_STRING) {
     return new FUSE.config();
+  } else if (network == GOERLI.NETWORK_STRING) {
+    return new GOERLI.config();
   }
 
   return new TEMPLATE.config();

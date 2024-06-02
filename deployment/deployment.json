@@ -139,8 +139,8 @@
         "network": "ethereum",
         "status": "prod",
         "versions": {
-          "schema": "3.0.1",
-          "subgraph": "2.0.1",
+          "schema": "3.1.0",
+          "subgraph": "2.0.2",
           "methodology": "1.1.0"
         },
         "files": {
@@ -173,8 +173,8 @@
         "network": "ethereum",
         "status": "prod",
         "versions": {
-          "schema": "3.0.1",
-          "subgraph": "2.0.1",
+          "schema": "3.1.0",
+          "subgraph": "2.0.2",
           "methodology": "1.1.0"
         },
         "files": {
@@ -207,8 +207,8 @@
         "network": "ethereum",
         "status": "prod",
         "versions": {
-          "schema": "3.0.1",
-          "subgraph": "2.0.1",
+          "schema": "3.1.0",
+          "subgraph": "2.0.2",
           "methodology": "1.1.0"
         },
         "files": {
@@ -241,8 +241,8 @@
         "network": "avalanche",
         "status": "prod",
         "versions": {
-          "schema": "3.0.1",
-          "subgraph": "2.0.1",
+          "schema": "3.1.0",
+          "subgraph": "2.0.2",
           "methodology": "1.1.0"
         },
         "files": {
@@ -267,8 +267,8 @@
         "network": "ethereum",
         "status": "prod",
         "versions": {
-          "schema": "3.0.1",
-          "subgraph": "2.0.1",
+          "schema": "3.1.0",
+          "subgraph": "2.0.2",
           "methodology": "1.1.0"
         },
         "files": {
@@ -293,8 +293,8 @@
         "network": "polygon",
         "status": "prod",
         "versions": {
-          "schema": "3.0.1",
-          "subgraph": "2.0.1",
+          "schema": "3.1.0",
+          "subgraph": "2.0.2",
           "methodology": "1.1.0"
         },
         "files": {
@@ -323,8 +323,8 @@
         "network": "arbitrum",
         "status": "prod",
         "versions": {
-          "schema": "3.0.1",
-          "subgraph": "2.0.1",
+          "schema": "3.1.0",
+          "subgraph": "2.0.3",
           "methodology": "1.1.0"
         },
         "files": {
@@ -349,8 +349,8 @@
         "network": "avalanche",
         "status": "prod",
         "versions": {
-          "schema": "3.0.1",
-          "subgraph": "2.0.1",
+          "schema": "3.1.0",
+          "subgraph": "2.0.3",
           "methodology": "1.1.0"
         },
         "files": {
@@ -375,8 +375,8 @@
         "network": "fantom",
         "status": "prod",
         "versions": {
-          "schema": "3.0.1",
-          "subgraph": "2.0.1",
+          "schema": "3.1.0",
+          "subgraph": "2.0.3",
           "methodology": "1.1.0"
         },
         "files": {
@@ -397,8 +397,8 @@
         "network": "harmony",
         "status": "prod",
         "versions": {
-          "schema": "3.0.1",
-          "subgraph": "2.0.1",
+          "schema": "3.1.0",
+          "subgraph": "2.0.3",
           "methodology": "1.1.0"
         },
         "files": {
@@ -419,8 +419,8 @@
         "network": "polygon",
         "status": "prod",
         "versions": {
-          "schema": "3.0.1",
-          "subgraph": "2.0.1",
+          "schema": "3.1.0",
+          "subgraph": "2.0.3",
           "methodology": "1.1.0"
         },
         "files": {
@@ -441,8 +441,8 @@
         "network": "optimism",
         "status": "prod",
         "versions": {
-          "schema": "3.0.1",
-          "subgraph": "2.0.1",
+          "schema": "3.1.0",
+          "subgraph": "2.0.3",
           "methodology": "1.1.0"
         },
         "files": {
@@ -463,8 +463,8 @@
         "network": "metis",
         "status": "dev",
         "versions": {
-          "schema": "3.0.1",
-          "subgraph": "2.0.1",
+          "schema": "3.1.0",
+          "subgraph": "2.0.3",
           "methodology": "1.1.0"
         },
         "files": {
@@ -485,8 +485,8 @@
         "network": "ethereum",
         "status": "prod",
         "versions": {
-          "schema": "3.0.1",
-          "subgraph": "2.0.1",
+          "schema": "3.1.0",
+          "subgraph": "2.0.3",
           "methodology": "1.1.0"
         },
         "files": {
@@ -650,7 +650,7 @@
         "status": "prod",
         "versions": {
           "schema": "1.3.0",
-          "subgraph": "1.2.2",
+          "subgraph": "1.2.3",
           "methodology": "1.0.0"
         },
         "files": {
@@ -1108,7 +1108,7 @@
         "status": "prod",
         "versions": {
           "schema": "1.3.0",
-          "subgraph": "1.1.1",
+          "subgraph": "1.1.2",
           "methodology": "1.0.0"
         },
         "files": {
@@ -2502,7 +2502,7 @@
         "status": "prod",
         "versions": {
           "schema": "2.0.1",
-          "subgraph": "1.4.0",
+          "subgraph": "1.4.1",
           "methodology": "1.0.1"
         },
         "files": {
@@ -2706,6 +2706,28 @@
           "prepare:yaml": true,
           "prepare:constants": true
         }
+      },
+      "mummy-finance-arbitrum": {
+        "network": "arbitrum",
+        "status": "prod",
+        "versions": {
+          "schema": "1.3.3",
+          "subgraph": "1.0.1",
+          "methodology": "1.0.0"
+        },
+        "services": {
+          "hosted-service": {
+            "slug": "mummy-finance-arbitrum",
+            "query-id": "mummy-finance-arbitrum"
+          }
+        },
+        "files": {
+          "template": "mummy.finance.template.yaml"
+        },
+        "options": {
+          "prepare:yaml": true,
+          "prepare:constants": true
+        }
       }
     }
   },
@@ -2720,7 +2742,7 @@
         "status": "prod",
         "versions": {
           "schema": "2.0.1",
-          "subgraph": "1.1.0",
+          "subgraph": "1.1.1",
           "methodology": "1.1.0"
         },
         "files": {
@@ -3068,7 +3090,7 @@
         "status": "prod",
         "versions": {
           "schema": "3.0.1",
-          "subgraph": "1.0.0",
+          "subgraph": "1.1.0",
           "methodology": "1.0.0"
         },
         "files": {
@@ -3098,7 +3120,7 @@
         "status": "prod",
         "versions": {
           "schema": "3.0.1",
-          "subgraph": "1.0.0",
+          "subgraph": "1.1.0",
           "methodology": "1.0.0"
         },
         "files": {
@@ -3202,7 +3224,7 @@
         "status": "prod",
         "versions": {
           "schema": "1.3.1",
-          "subgraph": "1.0.0",
+          "subgraph": "1.0.2",
           "methodology": "1.0.0"
         },
         "files": {
@@ -3228,7 +3250,7 @@
         "status": "prod",
         "versions": {
           "schema": "1.3.1",
-          "subgraph": "1.0.0",
+          "subgraph": "1.0.2",
           "methodology": "1.0.0"
         },
         "files": {
@@ -3292,7 +3314,7 @@
         "status": "dev",
         "versions": {
           "schema": "1.3.0",
-          "subgraph": "1.3.1",
+          "subgraph": "1.3.2",
           "methodology": "1.0.0"
         },
         "files": {
@@ -3421,8 +3443,8 @@
         "network": "fantom",
         "status": "prod",
         "versions": {
-          "schema": "3.0.1",
-          "subgraph": "2.0.1",
+          "schema": "3.1.0",
+          "subgraph": "2.0.2",
           "methodology": "1.0.0"
         },
         "files": {
@@ -3451,8 +3473,8 @@
         "network": "ethereum",
         "status": "prod",
         "versions": {
-          "schema": "3.0.1",
-          "subgraph": "2.0.1",
+          "schema": "3.1.0",
+          "subgraph": "2.0.3",
           "methodology": "1.0.0"
         },
         "files": {
@@ -3485,8 +3507,8 @@
         "network": "arbitrum",
         "status": "prod",
         "versions": {
-          "schema": "3.0.1",
-          "subgraph": "2.0.1",
+          "schema": "3.1.0",
+          "subgraph": "2.0.2",
           "methodology": "1.0.0"
         },
         "files": {
@@ -3519,8 +3541,8 @@
         "network": "arbitrum",
         "status": "prod",
         "versions": {
-          "schema": "3.0.1",
-          "subgraph": "2.0.1",
+          "schema": "3.1.0",
+          "subgraph": "2.0.2",
           "methodology": "1.0.0"
         },
         "files": {
@@ -3542,7 +3564,7 @@
         "status": "prod",
         "versions": {
           "schema": "3.0.1",
-          "subgraph": "2.0.0",
+          "subgraph": "2.0.2",
           "methodology": "1.0.0"
         },
         "files": {
@@ -3571,8 +3593,8 @@
         "network": "ethereum",
         "status": "prod",
         "versions": {
-          "schema": "3.0.1",
-          "subgraph": "2.0.1",
+          "schema": "3.1.0",
+          "subgraph": "2.0.2",
           "methodology": "1.0.0"
         },
         "files": {
@@ -3828,6 +3850,58 @@
           "decentralized-network": {
             "slug": "pancakeswap-v3-ethereum",
             "query-id": "JAGXF8B14mpB8QGKnwhKTs5JxsQZBJQvbDGFcWwL7gbm"
+          }
+        }
+      }
+    }
+  },
+  "pancakeswap-v3-swap": {
+    "schema": "dex-amm",
+    "base": "uniswap-v3-forks-swap",
+    "protocol": "pancakeswap-v3-swap",
+    "project": "pancakeswap",
+    "deployments": {
+      "pancakeswap-v3-swap-bsc": {
+        "network": "bsc",
+        "status": "dev",
+        "versions": {
+          "schema": "4.0.0",
+          "subgraph": "1.0.0",
+          "methodology": "1.0.0"
+        },
+        "files": {
+          "template": "pancakeswap.v3.swap.template.yaml"
+        },
+        "options": {
+          "prepare:yaml": true,
+          "prepare:constants": true
+        },
+        "services": {
+          "hosted-service": {
+            "slug": "pancakeswap-v3-swap-bsc",
+            "query-id": "pancakeswap-v3-swap-bsc"
+          }
+        }
+      },
+      "pancakeswap-v3-swap-ethereum": {
+        "network": "ethereum",
+        "status": "dev",
+        "versions": {
+          "schema": "4.0.0",
+          "subgraph": "1.0.0",
+          "methodology": "1.0.0"
+        },
+        "files": {
+          "template": "pancakeswap.v3.swap.template.yaml"
+        },
+        "options": {
+          "prepare:yaml": true,
+          "prepare:constants": true
+        },
+        "services": {
+          "hosted-service": {
+            "slug": "pancakeswap-v3-swap-ethereum",
+            "query-id": "pancakeswap-v3-swap-ethereum"
           }
         }
       }
@@ -4519,6 +4593,36 @@
       }
     }
   },
+  "quickswap-swap": {
+    "schema": "dex-amm",
+    "base": "uniswap-forks-swap",
+    "protocol": "quickswap-swap",
+    "project": "quickswap",
+    "deployments": {
+      "quickswap-swap-polygon": {
+        "network": "polygon",
+        "status": "dev",
+        "versions": {
+          "schema": "1.3.2",
+          "subgraph": "1.0.1",
+          "methodology": "1.0.0"
+        },
+        "files": {
+          "template": "quickswap.swap.template.yaml"
+        },
+        "options": {
+          "prepare:yaml": true,
+          "prepare:constants": true
+        },
+        "services": {
+          "hosted-service": {
+            "slug": "quickswap-swap-polygon",
+            "query-id": "quickswap-swap-polygon"
+          }
+        }
+      }
+    }
+  },
   "solarbeam": {
     "schema": "dex-amm",
     "base": "uniswap-forks",
@@ -4620,7 +4724,7 @@
         "status": "prod",
         "versions": {
           "schema": "1.3.2",
-          "subgraph": "1.2.0",
+          "subgraph": "1.3.0",
           "methodology": "1.0.0"
         },
         "files": {
@@ -4764,7 +4868,7 @@
         "status": "prod",
         "versions": {
           "schema": "1.3.2",
-          "subgraph": "1.3.0",
+          "subgraph": "1.5.0",
           "methodology": "1.0.0"
         },
         "files": {
@@ -4812,7 +4916,7 @@
         "status": "prod",
         "versions": {
           "schema": "1.3.2",
-          "subgraph": "1.2.0",
+          "subgraph": "1.3.0",
           "methodology": "1.0.0"
         },
         "files": {
@@ -5025,6 +5129,66 @@
       }
     }
   },
+  "uniswap-v2-swap": {
+    "schema": "dex-amm",
+    "base": "uniswap-forks-swap",
+    "protocol": "uniswap-v2-swap",
+    "project": "uniswap",
+    "deployments": {
+      "uniswap-v2-swap-ethereum": {
+        "network": "ethereum",
+        "status": "dev",
+        "versions": {
+          "schema": "1.3.2",
+          "subgraph": "1.0.1",
+          "methodology": "1.0.0"
+        },
+        "files": {
+          "template": "uniswap.v2.swap.template.yaml"
+        },
+        "options": {
+          "prepare:yaml": true,
+          "prepare:constants": true
+        },
+        "services": {
+          "hosted-service": {
+            "slug": "uniswap-v2-swap-ethereum",
+            "query-id": "uniswap-v2-swap-ethereum"
+          }
+        }
+      }
+    }
+  },
+  "pancakeswap-v2-swap": {
+    "schema": "dex-amm",
+    "base": "uniswap-forks-swap",
+    "protocol": "pancakeswap-v2-swap",
+    "project": "pancakeswap",
+    "deployments": {
+      "pancakeswap-v2-swap-bsc": {
+        "network": "bsc",
+        "status": "dev",
+        "versions": {
+          "schema": "1.3.2",
+          "subgraph": "1.0.1",
+          "methodology": "1.0.0"
+        },
+        "files": {
+          "template": "pancakeswap.v2.swap.template.yaml"
+        },
+        "options": {
+          "prepare:yaml": true,
+          "prepare:constants": true
+        },
+        "services": {
+          "hosted-service": {
+            "slug": "pancakeswap-v2-swap-bsc",
+            "query-id": "pancakeswap-v2-swap-bsc"
+          }
+        }
+      }
+    }
+  },
   "vvs-finance": {
     "schema": "dex-amm",
     "base": "uniswap-forks",
@@ -5111,22 +5275,22 @@
       }
     }
   },
-  "velodrome-finance": {
+  "velodrome-finance-v1": {
     "schema": "dex-amm",
     "base": "velodrome-finance",
-    "protocol": "velodrome-finance",
+    "protocol": "velodrome-finance-v1",
     "project": "velodrome",
     "deployments": {
-      "velodrome-finance-optimism": {
+      "velodrome-finance-v1-optimism": {
         "network": "optimism",
         "status": "prod",
         "versions": {
           "schema": "1.3.0",
-          "subgraph": "1.0.3",
+          "subgraph": "1.1.0",
           "methodology": "1.0.0"
         },
         "files": {
-          "template": "velodrome.finance.template.yaml"
+          "template": "velodrome.finance.v1.template.yaml"
         },
         "options": {
           "prepare:yaml": true,
@@ -5136,6 +5300,36 @@
           "hosted-service": {
             "slug": "velodrome-optimism",
             "query-id": "velodrome-optimism"
+          }
+        }
+      }
+    }
+  },
+  "velodrome-finance-v2": {
+    "schema": "dex-amm",
+    "base": "velodrome-finance",
+    "protocol": "velodrome-finance-v2",
+    "project": "velodrome",
+    "deployments": {
+      "velodrome-finance-v2-optimism": {
+        "network": "optimism",
+        "status": "prod",
+        "versions": {
+          "schema": "1.3.0",
+          "subgraph": "1.0.0",
+          "methodology": "1.0.0"
+        },
+        "files": {
+          "template": "velodrome.finance.v2.template.yaml"
+        },
+        "options": {
+          "prepare:yaml": true,
+          "prepare:constants": false
+        },
+        "services": {
+          "hosted-service": {
+            "slug": "velodrome-v2-optimism",
+            "query-id": "velodrome-v2-optimism"
           }
         }
       }
@@ -5152,7 +5346,7 @@
         "status": "prod",
         "versions": {
           "schema": "1.3.0",
-          "subgraph": "1.2.2",
+          "subgraph": "1.2.4",
           "methodology": "1.0.0"
         },
         "files": {
@@ -5178,7 +5372,7 @@
         "status": "prod",
         "versions": {
           "schema": "1.3.0",
-          "subgraph": "1.2.2",
+          "subgraph": "1.2.4",
           "methodology": "1.0.0"
         },
         "files": {
@@ -5204,7 +5398,7 @@
         "status": "dev",
         "versions": {
           "schema": "1.3.0",
-          "subgraph": "1.2.2",
+          "subgraph": "1.2.4",
           "methodology": "1.0.0"
         },
         "files": {
@@ -6290,7 +6484,7 @@
         "status": "prod",
         "versions": {
           "schema": "1.3.0",
-          "subgraph": "1.0.1",
+          "subgraph": "1.0.2",
           "methodology": "1.0.0"
         },
         "files": {
@@ -6324,7 +6518,7 @@
         "status": "prod",
         "versions": {
           "schema": "1.3.0",
-          "subgraph": "1.0.1",
+          "subgraph": "1.1.2",
           "methodology": "1.0.0"
         },
         "files": {
@@ -7369,7 +7563,7 @@
         "network": "ethereum",
         "status": "prod",
         "versions": {
-          "schema": "1.1.1",
+          "schema": "1.2.0",
           "subgraph": "1.0.0",
           "methodology": "1.0.0"
         },
@@ -7391,7 +7585,7 @@
         "network": "optimism",
         "status": "prod",
         "versions": {
-          "schema": "1.1.1",
+          "schema": "1.2.0",
           "subgraph": "1.0.0",
           "methodology": "1.0.0"
         },
@@ -7413,7 +7607,7 @@
         "network": "boba",
         "status": "prod",
         "versions": {
-          "schema": "1.1.1",
+          "schema": "1.2.0",
           "subgraph": "1.0.0",
           "methodology": "1.0.0"
         },
@@ -7435,7 +7629,7 @@
         "network": "arbitrum",
         "status": "prod",
         "versions": {
-          "schema": "1.1.1",
+          "schema": "1.2.0",
           "subgraph": "1.0.0",
           "methodology": "1.0.0"
         },
@@ -7457,7 +7651,7 @@
         "network": "polygon",
         "status": "prod",
         "versions": {
-          "schema": "1.1.1",
+          "schema": "1.2.0",
           "subgraph": "1.0.0",
           "methodology": "1.0.0"
         },
@@ -7485,9 +7679,9 @@
     "deployments": {
       "hop-protocol-ethereum": {
         "network": "ethereum",
-        "status": "dev",
+        "status": "prod",
         "versions": {
-          "schema": "1.1.1",
+          "schema": "1.2.0",
           "subgraph": "1.0.0",
           "methodology": "1.0.0"
         },
@@ -7507,9 +7701,9 @@
       },
       "hop-protocol-arbitrum": {
         "network": "arbitrum",
-        "status": "dev",
+        "status": "prod",
         "versions": {
-          "schema": "1.1.1",
+          "schema": "1.2.0",
           "subgraph": "1.0.0",
           "methodology": "1.0.0"
         },
@@ -7529,9 +7723,9 @@
       },
       "hop-protocol-optimism": {
         "network": "optimism",
-        "status": "dev",
+        "status": "prod",
         "versions": {
-          "schema": "1.1.1",
+          "schema": "1.2.0",
           "subgraph": "1.0.0",
           "methodology": "1.0.0"
         },
@@ -7551,9 +7745,9 @@
       },
       "hop-protocol-xdai": {
         "network": "gnosis",
-        "status": "dev",
+        "status": "prod",
         "versions": {
-          "schema": "1.1.0",
+          "schema": "1.2.0",
           "subgraph": "1.0.0",
           "methodology": "1.0.0"
         },
@@ -7573,9 +7767,9 @@
       },
       "hop-protocol-polygon": {
         "network": "polygon",
-        "status": "dev",
+        "status": "prod",
         "versions": {
-          "schema": "1.1.1",
+          "schema": "1.2.0",
           "subgraph": "1.0.0",
           "methodology": "1.0.0"
         },
@@ -8950,6 +9144,39 @@
           "hosted-service": {
             "slug": "thena-v1-bsc",
             "query-id": "thena-v1-bsc"
+          }
+        }
+      }
+    }
+  },
+  "ebtc": {
+    "schema": "lending",
+    "base": "ebtc",
+    "protocol": "ebtc",
+    "project": "ebtc",
+    "deployments": {
+      "ebtc-goerli": {
+        "network": "goerli",
+        "status": "dev",
+        "versions": {
+          "schema": "3.0.1",
+          "subgraph": "0.0.1",
+          "methodology": "0.0.1"
+        },
+        "files": {
+          "template": "ebtc.template.yaml"
+        },
+        "options": {
+          "prepare:constants": true
+        },
+        "services": {
+          "decentralized-network": {
+            "slug": "ebtc-goerli",
+            "query-id": "QmdZphstRBDgd6teT5dhQDZ84H6bsqwTy8tEj579JFhqwU"
+          },
+          "hosted-service": {
+            "slug": "ebtc-goerli",
+            "query-id": "ebtc-goerli"
           }
         }
       }
